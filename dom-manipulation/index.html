@@ -7,16 +7,28 @@
 <body>
   <h1>Dynamic Quote Generator</h1>
 
+  <!-- Quote Display Section -->
   <div id="quoteDisplay"></div>
-
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Container where the add-quote form will be created dynamically -->
-  <div id="addQuoteContainer"></div>
+  <!-- Add Quote Form -->
+  <h2>Add a New Quote</h2>
+  <form id="addQuoteForm">
+    <input type="text" id="newQuoteText" placeholder="Enter quote" required>
+    <input type="text" id="newQuoteCategory" placeholder="Enter category" required>
+    <button type="submit">Add Quote</button>
+  </form>
 
-  <h2>Import / Export Quotes</h2>
-  <button id="exportBtn" onclick="exportToJsonFile()">Export Quotes</button>
-  <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  <!-- Category Filter -->
+  <h2>Filter Quotes by Category</h2>
+  <select id="categoryFilter" onchange="filterQuotes()">
+    <option value="all">All Categories</option>
+  </select>
+
+  <!-- Import/Export -->
+  <h2>Import/Export Quotes</h2>
+  <button onclick="exportToJsonFile()">Export Quotes</button>
+  <input type="file" id="importFile" onchange="importFromJsonFile(event)">
 
   <script src="script.js"></script>
 </body>
