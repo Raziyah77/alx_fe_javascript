@@ -2,33 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Quote Display Section -->
+  <!-- Display Area -->
   <div id="quoteDisplay"></div>
+
+  <!-- Buttons -->
   <button id="newQuote">Show New Quote</button>
+  <button onclick="exportToJsonFile()">Export Quotes</button>
+  <input type="file" id="importFile" onchange="importFromJsonFile(event)" />
 
   <!-- Add Quote Form -->
   <h2>Add a New Quote</h2>
-  <form id="addQuoteForm">
-    <input type="text" id="newQuoteText" placeholder="Enter quote" required>
-    <input type="text" id="newQuoteCategory" placeholder="Enter category" required>
-    <button type="submit">Add Quote</button>
-  </form>
+  <input type="text" id="newQuoteText" placeholder="Enter quote">
+  <input type="text" id="newQuoteCategory" placeholder="Enter category">
+  <button onclick="addQuote()">Add Quote</button>
 
   <!-- Category Filter -->
-  <h2>Filter Quotes by Category</h2>
+  <h2>Filter by Category</h2>
   <select id="categoryFilter" onchange="filterQuotes()">
     <option value="all">All Categories</option>
   </select>
-
-  <!-- Import/Export -->
-  <h2>Import/Export Quotes</h2>
-  <button onclick="exportToJsonFile()">Export Quotes</button>
-  <input type="file" id="importFile" onchange="importFromJsonFile(event)">
 
   <script src="script.js"></script>
 </body>
