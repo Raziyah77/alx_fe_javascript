@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Quote Display -->
   <div id="quoteDisplay"></div>
 
-  <!-- Buttons -->
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Add Quote Form -->
+  <h2>Add a New Quote</h2>
   <form id="addQuoteForm">
-    <input type="text" id="newQuoteText" placeholder="Enter quote text" required />
-    <input type="text" id="newQuoteCategory" placeholder="Enter quote category" required />
+    <input type="text" id="quoteText" placeholder="Enter quote" required />
+    <input type="text" id="quoteCategory" placeholder="Enter category" required />
     <button type="submit">Add Quote</button>
   </form>
 
-  <!-- JSON Import/Export -->
+  <h2>Import / Export Quotes</h2>
   <button onclick="exportToJsonFile()">Export Quotes</button>
   <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
 
